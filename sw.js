@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-27395fe5c72593418739.js"
+    "url": "webpack-runtime-2d4cbbd60c81a82a0878.js"
   },
   {
     "url": "styles.f73c58f4bf8599b792e0.css"
@@ -39,14 +39,14 @@ self.__precacheManifest = [
     "url": "commons-e4d1cf937e8afc4814a6.js"
   },
   {
-    "url": "app-4799f4e94d70c0204be4.js"
+    "url": "app-3573011213e5fa192db3.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-87ef582ba388a83f73c0.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "1fce43b3fbbfd8543d99a6cd7b7155fd"
+    "revision": "76bdbe65e9754850c905fea3a7cddf10"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -146,12 +146,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/extracold1209.github.io`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/extracold1209.github.io/app-4799f4e94d70c0204be4.js`))) {
+  if (!resources || !(await caches.match(`/app-3573011213e5fa192db3.js`))) {
     return await fetch(event.request)
   }
 
@@ -164,7 +164,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/extracold1209.github.io/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
