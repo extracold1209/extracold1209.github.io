@@ -1,10 +1,10 @@
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    title: 'Calpa&apos;s Blog',
-    description: 'Front End Technical Blog - Calpa',
-    siteUrl: 'https://calpa.me',
-    author: 'Calpa',
+    title: 'extracold1209&apos;s Blog',
+    description: 'extracold1209&apos;s Blog',
+    siteUrl: 'https://extracold1209.github.io',
+    author: 'Extracold1209',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
