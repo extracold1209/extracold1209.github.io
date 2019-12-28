@@ -18,10 +18,11 @@ const Footer = () => (
               href="https://reactjs.org/"
               title={`React ${React.version}`}
             />
-            .&nbsp;Hosted on&nbsp;
+            {/*.&nbsp;Hosted on&nbsp;
             <ExternalLink href="https://www.netlify.com/" title="Netlify" />
+            */}
             <br />
-            The code is open source and available at&nbsp;
+            The blog is open source and based on&nbsp;
             <ExternalLink
               href="https://github.com/calpa/gatsby-starter-calpa-blog"
               title="calpa/gatsby-starter-calpa-blog"
