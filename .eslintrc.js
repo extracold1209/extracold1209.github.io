@@ -33,9 +33,6 @@ const eslintrc = {
         css: 'always'
       },
     ],
-    'import/no-extraneous-dependencies': [2, { devDependencies: true }],
-    'import/no-unresolved': [2, { ignore: ['antd'] }],
-    'no-underscore-dangle': ['error', { allow: ['_id'] }],
   },
   env: {
     browser: true,

@@ -64,18 +64,17 @@
     }
   },
   "scripts": {
-    "start": "npm run develop",
-    "build": "gatsby build --prefix-paths",
+    "start": "gatsby develop",
     "develop": "gatsby develop",
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
+    "build": "gatsby build --prefix-paths",
     "deploy": "npm run build && gh-pages -d public -b master",
     "format": "eslint --fix --ignore-path .gitignore .",
     "format-style": "stylelint src/**/*.scss --syntax=scss",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "functions": "netlify-lambda serve functions",
     "reset": "rimraf pubilc/ .cache/",
     "commit": "npx git-cz",
-    "revert": "node ./scripts/revertConfig.js"
+    "revert": "node ./scripts/revertConfig.js",
+    "post": "node ./scripts/createNewPost.js"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
