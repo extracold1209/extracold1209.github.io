@@ -7,7 +7,7 @@ import { graphql } from 'gatsby';
 
 import 'gitalk/dist/gitalk.css';
 
-import { parseChineseDate } from '../api';
+import { parseDate } from '../api';
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
 import SEO from '../components/SEO';
@@ -64,7 +64,7 @@ class BlogPost extends Component {
           title={title}
           authorName={name}
           authorImage={iconUrl}
-          subTitle={parseChineseDate(date)}
+          subTitle={parseDate(date)}
         />
         <Sidebar />
         <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
