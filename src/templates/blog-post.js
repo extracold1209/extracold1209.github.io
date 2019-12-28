@@ -60,7 +60,7 @@ class BlogPost extends Component {
     return (
       <div className="row post order-2">
         <Header
-          img={headerImage || 'http://lorempixel.com/1900/450/nature/'}
+          img={headerImage || 'https://picsum.photos/1900/450'}
           title={title}
           authorName={name}
           authorImage={iconUrl}
