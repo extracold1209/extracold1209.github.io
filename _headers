@@ -1,0 +1,86 @@
+## Created with gatsby-plugin-netlify
+
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
+/component---node-modules-gatsby-plugin-offline-app-shell-js-87ef582ba388a83f73c0.js
+  Cache-Control: public, max-age=31536000, immutable
+/styles.f73c58f4bf8599b792e0.css
+  Cache-Control: public, max-age=31536000, immutable
+/styles-9fe1354da02ff004d9ad.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-templates-index-js-0750e1c4217d6f1bb5e3.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-templates-blog-post-js-07012bb2f1488535a1bc.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-templates-tag-js-6732d043b2790ba39d5b.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-404-js-2b41729b6cc5f963559d.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-tags-js-bee8795382f6f1bca6bb.js
+  Cache-Control: public, max-age=31536000, immutable
+/webpack-runtime-27395fe5c72593418739.js
+  Cache-Control: public, max-age=31536000, immutable
+/commons-e4d1cf937e8afc4814a6.js
+  Cache-Control: public, max-age=31536000, immutable
+/app-4799f4e94d70c0204be4.js
+  Cache-Control: public, max-age=31536000, immutable
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/sw.js
+  Cache-Control: no-cache
+/extracold1209.github.io/offline-plugin-app-shell-fallback/
+  Link: </extracold1209.github.io/webpack-runtime-27395fe5c72593418739.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/commons-e4d1cf937e8afc4814a6.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/app-4799f4e94d70c0204be4.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/component---node-modules-gatsby-plugin-offline-app-shell-js-87ef582ba388a83f73c0.js>; rel=preload; as=script
+/extracold1209.github.io/
+  Link: </extracold1209.github.io/webpack-runtime-27395fe5c72593418739.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/commons-e4d1cf937e8afc4814a6.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/app-4799f4e94d70c0204be4.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/component---src-templates-index-js-0750e1c4217d6f1bb5e3.js>; rel=preload; as=script
+/extracold1209.github.io/2019/08/27/javascript-generator-yield-async-await
+  Link: </extracold1209.github.io/webpack-runtime-27395fe5c72593418739.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/commons-e4d1cf937e8afc4814a6.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/app-4799f4e94d70c0204be4.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/component---src-templates-blog-post-js-07012bb2f1488535a1bc.js>; rel=preload; as=script
+/extracold1209.github.io/tag/translate
+  Link: </extracold1209.github.io/webpack-runtime-27395fe5c72593418739.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/commons-e4d1cf937e8afc4814a6.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/app-4799f4e94d70c0204be4.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/component---src-templates-tag-js-6732d043b2790ba39d5b.js>; rel=preload; as=script
+/extracold1209.github.io/tag/javascript
+  Link: </extracold1209.github.io/webpack-runtime-27395fe5c72593418739.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/commons-e4d1cf937e8afc4814a6.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/app-4799f4e94d70c0204be4.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/component---src-templates-tag-js-6732d043b2790ba39d5b.js>; rel=preload; as=script
+/extracold1209.github.io/404/
+  Link: </extracold1209.github.io/webpack-runtime-27395fe5c72593418739.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/commons-e4d1cf937e8afc4814a6.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/app-4799f4e94d70c0204be4.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/component---src-pages-404-js-2b41729b6cc5f963559d.js>; rel=preload; as=script
+/extracold1209.github.io/tags/
+  Link: </extracold1209.github.io/webpack-runtime-27395fe5c72593418739.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/commons-e4d1cf937e8afc4814a6.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/app-4799f4e94d70c0204be4.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/component---src-pages-tags-js-bee8795382f6f1bca6bb.js>; rel=preload; as=script
+/extracold1209.github.io/404.html
+  Link: </extracold1209.github.io/webpack-runtime-27395fe5c72593418739.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/styles-9fe1354da02ff004d9ad.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/commons-e4d1cf937e8afc4814a6.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/app-4799f4e94d70c0204be4.js>; rel=preload; as=script
+  Link: </extracold1209.github.io/component---src-pages-404-js-2b41729b6cc5f963559d.js>; rel=preload; as=script
