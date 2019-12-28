@@ -1,11 +1,11 @@
 {
-  "url": "https://calpa.me",
+  "url": "https://extracold1209.github.io",
   "meta": {
     "favicon": "/assets/profile-250x250.jpg",
     "keyword": "extracold1209, blog, js, javascript",
-    "description": "Hello Description",
+    "description": "extracold1209's blog",
     "theme_color": "#384f7c",
-    "google_site_verification": "riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io"
+    "google_site_verification": "wTe6Eb1oA9QsQnVrM12H2_x0aopWLGxgszFK-Y2nLts"
   },
   "name": "extracold1209",
   "about": "/2018/05/01/about-calpa-liu/",
@@ -17,11 +17,11 @@
   },
   "title": "extracold1209's blog",
   "gitalk": {
-    "repo": "calpa.github.io",
-    "admin": ["calpa"],
-    "owner": "calpa",
-    "clientID": "18255f031b5e11edd98a",
-    "clientSecret": "2ff6331da9e53f9a91bcc991d38d550c85026714",
+    "repo": "extracold1209.github.io",
+    "admin": ["extracold1209"],
+    "owner": "extracold1209",
+    "clientID": "1ed60ecc37c639407369",
+    "clientSecret": "2fdad9c4572b5b17ead0f39001155eded6dbba37",
     "pagerDirection": "first",
     "distractionFreeMode": true
   },
