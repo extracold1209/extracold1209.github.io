@@ -40,7 +40,7 @@ const Page = ({ pageContext, location }) => {
   const nextUrl = `/${pathPrefix}/${index + 1}`;
 
   return (
-    <React.Fragment>
+    <>
       <div
         className="row homepage"
         style={{
@@ -50,7 +50,11 @@ const Page = ({ pageContext, location }) => {
         <Sidebar />
         <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2">
           {group.map(({ node }) => (
-            <Card {...node.frontmatter} url={node.frontmatter.slug ? node.frontmatter.slug : node.fields.slug} key={node.fields.slug} />
+            <Card
+              url={node.frontmatter.slug ? node.frontmatter.slug : node.fields.slug}
+              key={node.fields.slug}
+              {...node.frontmatter}
+            />
           ))}
 
           <div
@@ -71,7 +75,7 @@ const Page = ({ pageContext, location }) => {
         <div className="col-xl-2 col-lg-1 order-3" />
       </div>
       <ShareBox url={location.href} hasCommentBox={false} />
-    </React.Fragment>
+    </>
   );
 };
 

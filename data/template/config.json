@@ -1,17 +1,17 @@
 {
   "url": "https://calpa.me",
   "meta": {
-    "favicon": "https://i.imgur.com/PO9Y4fT.jpg",
-    "keyword": "calpa, blog, JavaScript",
-    "description": "Calpa 的技術博客，開發日常，以及遇到的坑",
+    "favicon": "https://avatars2.githubusercontent.com/u/40051225?s=460&v=4",
+    "keyword": "extracold1209, blog, js, javascript",
+    "description": "Hello Description",
     "theme_color": "#384f7c",
     "google_site_verification": "riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io"
   },
-  "name": "calpa",
+  "name": "extracold1209",
   "about": "/2018/05/01/about-calpa-liu/",
   "email": "calpaliu@gmail.com",
   "stats": {
-    "image": "https://i.imgur.com/VjBWiSt.png",
+    "image": "https://avatars2.githubusercontent.com/u/40051225?s=460&v=4",
     "title": "過去三十日數據",
     "description": "過去三十日數據"
   },
@@ -32,13 +32,13 @@
       "title": "Calpa's Blog"
     }
   ],
-  "iconUrl": "https://i.imgur.com/kjt2x52.jpg",
-  "wordings": ["GatsbyJS, ReactJS", "全週期開發者"],
+  "iconUrl": "/assets/profile-250x250.jpg",
+  "wordings": ["왜 이렇게 여러개로 했을까?", "아랫줄"],
   "gaTrackId": "UA-84737574-3",
   "navbarList": [
     {
       "href": "/guestbook/",
-      "title": "留言簿"
+      "title": "Guestbook"
     },
     {
       "href": "/tags/",
@@ -46,7 +46,7 @@
     },
     {
       "href": "/2018/05/01/about-calpa-liu/",
-      "title": "關於作者"
+      "title": "About"
     }
   ],
   "redirectors": [
@@ -62,8 +62,6 @@
       "target": "/stats/"
     }
   ],
-  "zhihuUsername": "piao-xue-wu-ying",
-  "githubUsername": "calpa",
-  "maxPostsInPage": 10,
-  "facebook": "calpablog"
+  "githubUsername": "extracold1209",
+  "maxPostsInPage": 10
 }

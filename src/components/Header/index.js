@@ -4,8 +4,6 @@ import './index.scss';
 
 import JueJin from '../JueJin';
 
-import { parseImgur } from '../../api/images';
-
 const Header = ({
   img,
   title,
@@ -29,7 +27,7 @@ const Header = ({
           <div className="m-left">
             {authorImage && (
               <img
-                src={parseImgur(authorImage, 'small-square')}
+                src={authorImage}
                 className="author-image"
                 alt={authorName}
               />

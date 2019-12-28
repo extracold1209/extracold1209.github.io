@@ -37,18 +37,18 @@ const TagPage = ({ data }) => {
         <Sidebar />
 
         <div className="col order-2">
-          {tags.map(item => (
+          {tags.map((item) => (
             <Tag name={item} key={item} count={mapping[item]} />
           ))}
         </div>
       </div>
       <SEO
-        title="標籤"
+        title="Labels"
         url="/tags/"
         siteTitleAlt="Calpa's Blog"
         isPost={false}
         description="Tags Page"
-        image="https://i.imgur.com/M795H8A.jpg"
+        image="/images/foobar.jpg"
       />
     </div>
   );

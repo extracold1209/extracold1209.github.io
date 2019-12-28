@@ -1,7 +1,11 @@
-const path = require('path');
-
 const eslintrc = {
-  extends: 'airbnb',
+  parserOptions: {
+    ecmaVersion: 8,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
   plugins: ['react', 'jsx-a11y', 'import'],
   settings: {
     'import/core-modules': [
@@ -22,7 +26,11 @@ const eslintrc = {
     'import/extensions': [
       2,
       'never',
-      { 'web.js': 'never', json: 'never', css: 'always' },
+      {
+        'web.js': 'never',
+        json: 'never',
+        css: 'always'
+      },
     ],
     'import/no-extraneous-dependencies': [2, { devDependencies: true }],
     'import/no-unresolved': [2, { ignore: ['antd'] }],
