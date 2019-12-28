@@ -1,7 +1,7 @@
 {
   "url": "https://calpa.me",
   "meta": {
-    "favicon": "https://avatars2.githubusercontent.com/u/40051225?s=460&v=4",
+    "favicon": "/assets/profile-250x250.jpg",
     "keyword": "extracold1209, blog, js, javascript",
     "description": "Hello Description",
     "theme_color": "#384f7c",
@@ -9,9 +9,9 @@
   },
   "name": "extracold1209",
   "about": "/2018/05/01/about-calpa-liu/",
-  "email": "calpaliu@gmail.com",
+  "email": "extracold1209@gmail.com",
   "stats": {
-    "image": "https://avatars2.githubusercontent.com/u/40051225?s=460&v=4",
+    "image": "/assets/profile-250x250.jpg",
     "title": "過去三十日數據",
     "description": "過去三十日數據"
   },
@@ -33,7 +33,7 @@
     }
   ],
   "iconUrl": "/assets/profile-250x250.jpg",
-  "wordings": ["왜 이렇게 여러개로 했을까?", "아랫줄"],
+  "wordings": ["아 블로그만들기 개어려워", "나는 빡빡이다"],
   "gaTrackId": "UA-84737574-3",
   "navbarList": [
     {

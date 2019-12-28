@@ -15,7 +15,7 @@ const imageStyle = (headerImage, color) => ({
 
 const CardHeader = ({ url, image, backgroundColor }) => (
   <Link to={url} href={url}>
-    <div className="wrapper" style={imageStyle(image, backgroundColor)} />
+    <div className="wrapper" style={imageStyle(image, backgroundColor)}/>
   </Link>
 );
 
@@ -42,15 +42,12 @@ const Card = ({
           <div className="stats">
             <span className="date">{date.split('T')[0]}</span>
             {tags.map(name => (
-              <Tag name={name} key={name} />
+              <Tag name={name} key={name}/>
             ))}
           </div>
           <Link to={url} href={url}>
             <h4 className="title">{title}</h4>
-          </Link>
-          <p>{description}</p>
-          <Link to={url} href={url}>
-            ....繼續閱讀全文內容
+            <p>{description}</p>
           </Link>
         </div>
       </div>
