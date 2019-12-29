@@ -12,6 +12,13 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-webpack-bundle-analyzer',
     {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/content`,
@@ -77,6 +84,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline', // put this after gatsby-plugin-manifest
-    'gatsby-plugin-netlify', // make sure to put last in the array
   ],
 };
