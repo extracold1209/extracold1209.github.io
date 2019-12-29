@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Tag from '../Tag';
-import { parseImgur } from '../../api/images';
 
 import './index.scss';
 
@@ -19,8 +18,9 @@ interface IProps {
 const CardHeader: React.FC<{url: string, image: string; backgroundColor: string}> = ({ url, image, backgroundColor }) => (
   <Link to={url}>
     <div className="wrapper" style={{
+      backgroundSize: 'cover',
       backgroundColor: `#${backgroundColor}`,
-      backgroundImage: ` url(${parseImgur(image, 'large')})`,
+      backgroundImage: `url(${image})`,
     }}/>
   </Link>
 );

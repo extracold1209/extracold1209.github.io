@@ -6,7 +6,7 @@ slug: /2019/11/29/2019-memoirs
 description: ''
 tags:
   - memoirs
-headerImage: ''
+headerImage: '/images/ilidan.jpg'
 date: 2019-12-29T03:50:28.211Z
 ---
 
