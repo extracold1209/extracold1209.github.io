@@ -1,4 +1,5 @@
 import React from 'react';
+import { isBrowser } from "../../api";
 import { Transition as ReactTransition, TransitionGroup } from 'react-transition-group';
 
 const transitionDelay = 100;
@@ -21,7 +22,7 @@ const getTransitionStyles: { [key: string]: React.CSSProperties } = {
 const Transition: React.FC = ({ children }) => (
     <TransitionGroup>
         <ReactTransition
-            key={location.pathname}
+            key={isBrowser() ? location.pathname : Math.random()}
             timeout={
                 { enter: transitionDelay, exit: transitionDelay } // duration of transition
             }
