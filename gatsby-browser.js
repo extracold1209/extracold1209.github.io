@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import ReactGA from 'react-ga';
-import { config } from './data';
+import config from './data/config.json';
 
 import installFontAwesome from './src/api/installFontAwesome';
 

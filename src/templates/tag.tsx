@@ -1,36 +1,11 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import Card from '../components/Card';
 import SEO from '../components/SEO';
 import Sidebar from '../components/Sidebar';
 
-const TagPage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
-    const { allMarkdownRemark } = useStaticQuery(graphql`
-      query tagQuery($tag: [String!]) {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: frontmatter___date }
-          filter: { frontmatter: { tags: { in: $tag } } }
-        ) {
-          edges {
-            node {
-              id
-              frontmatter {
-                id
-                url: slug
-                title
-                date
-                tags
-                headerImage
-                description
-              }
-            }
-          }
-        }
-      }
-    `);
-
-    console.log('tag pagecontext', pageContext);
-    const { edges } = allMarkdownRemark;
+const TagPage: React.FC<{ data: any; pageContext: any }> = ({ data, pageContext }) => {
+    const { edges } = data.allMarkdownRemark;
     const { tag } = pageContext;
     return (
         <div className="container">
@@ -75,3 +50,30 @@ const TagPage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
 };
 
 export default TagPage;
+
+/**
+ * useStaticQuery 의 limitation - variable 주입이 안됨
+ */
+export const pageQuery = graphql`
+  query tagQuery($tag: [String!]) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
+      filter: { frontmatter: { tags: { in: $tag } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            id
+            url: slug
+            title
+            date
+            tags
+            headerImage
+            description
+          }
+        }
+      }
+    }
+  }
+`;

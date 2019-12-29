@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 
 import Transition from '../Transition';
@@ -17,7 +16,7 @@ const Layout: React.FC = ({ children }) => (
     <div className="layout">
         <Head/>
         <Navbar/>
-        <Transition location={location}>
+        <Transition>
             <div className="container-fluid">{children}</div>
         </Transition>
         <Footer/>

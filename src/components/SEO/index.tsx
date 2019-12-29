@@ -1,20 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import config from '../../../data';
-
-// SEO.propTypes = {
-//     url: PropTypes.string.isRequired,
-//     title: PropTypes.string,
-//     description: PropTypes.string.isRequired,
-//     image: PropTypes.string.isRequired,
-//     siteTitleAlt: PropTypes.string.isRequired,
-//     isPost: PropTypes.bool.isRequired,
-// };
-//
-// SEO.defaultProps = {
-//     title: config.title,
-// };
+import config from '../../../data/config.json';
 
 interface IProps {
     url: string;
@@ -24,57 +11,6 @@ interface IProps {
     siteTitleAlt: string;
     isPost: boolean;
 }
-
-// const schemaOrgJSONLD = (
-//     {
-//         url,
-//         title,
-//         siteTitleAlt,
-//         isPost,
-//         image,
-//         description,
-//     }
-// ) => [
-//     {
-//         '@context': 'http://schema.org',
-//         '@type': 'WebSite',
-//         url,
-//         name: title,
-//         alternateName: siteTitleAlt || '',
-//     },
-//     isPost
-//         ? {
-//             '@context': 'http://schema.org',
-//             '@type': 'BreadcrumbList',
-//             itemListElement: [
-//                 {
-//                     '@type': 'ListItem',
-//                     position: 1,
-//                     item: {
-//                         '@id': url,
-//                         name: title,
-//                         image,
-//                     },
-//                 },
-//             ],
-//         }
-//         : '',
-//     isPost
-//         ? {
-//             '@context': 'http://schema.org',
-//             '@type': 'BlogPosting',
-//             url,
-//             name: title,
-//             alternateName: siteTitleAlt || '',
-//             headline: title,
-//             image: {
-//                 '@type': 'ImageObject',
-//                 url: image,
-//             },
-//             description,
-//         }
-//         : '',
-// ];
 
 const SEO: React.FC<IProps> = (
     {
@@ -87,11 +23,6 @@ const SEO: React.FC<IProps> = (
         {/* General tags */}
         <meta name="description" content={description}/>
         <meta name="image" content={image}/>
-
-        {/* Schema.org tags */}
-        {/*<script type="application/ld+json">
-            {JSON.stringify(schemaOrgJSONLD({ url, title, siteTitleAlt, isPost }))}
-        </script>*/}
 
         {/* OpenGraph tags */}
         <meta property="og:url" content={url}/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { config } from '../../../data';
+import config from '../../../data/config.json';
 
 const Head = () => (
   <Helmet defaultTitle={config.title} titleTemplate={`%s | ${config.title}`}>

@@ -24,15 +24,6 @@ const eslintrc = {
     'no-shadow': 'warn',
     'no-console': 0,
     'linebreak-style': 0,
-    'import/extensions': [
-      2,
-      'never',
-      {
-        'web.js': 'never',
-        json: 'never',
-        css: 'always'
-      },
-    ],
   },
   env: {
     browser: true,

@@ -13,7 +13,7 @@ import Header from '../components/Header';
 // import TableOfContent from '../components/TableOfContent';
 import ShareBox from '../components/ShareBox';
 
-import { config } from '../../data';
+import config from '../../data/config.json';
 // Styles
 import './blog-post.scss';
 

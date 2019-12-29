@@ -2,7 +2,7 @@ import React from 'react';
 
 import ExternalLink from '../../ExternalLink';
 
-import { config } from '../../../../data';
+import config from '../../../../data/config.json';
 
 import './index.scss';
 

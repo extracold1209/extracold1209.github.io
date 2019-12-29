@@ -38,6 +38,7 @@
     "gitalk": "^1.5.0",
     "han-css": "^3.3.0",
     "highlight.js": "^9.17.1",
+    "lodash": "^4.17.15",
     "lozad": "^1.14.0",
     "md5": "^2.2.1",
     "node-sass": "^4.13.0",
@@ -68,6 +69,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
+    "@types/lodash": "^4.14.149",
     "@types/lozad": "^1.9.0",
     "@types/node": "^13.1.1",
     "@types/react": "^16.9.17",
@@ -80,6 +82,7 @@
     "eslint-import-resolver-webpack": "^0.12.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-react": "^7.17.0",
+    "gatsby-plugin-lodash": "^3.1.18",
     "gatsby-plugin-typescript": "^2.1.23",
     "gh-pages": "^2.1.1",
     "prettier": "^1.19.1",
