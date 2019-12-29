@@ -1,23 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import Dropdown from './Dropdown';
 
 import { getPages } from '../../api';
-import { handlePreviousPage, handleNextPage } from '../../api/url';
+import { handleNextPage, handlePreviousPage } from '../../api/url';
 
-const PageItem = ({ number, content }) => (
+const PageItem: React.FC<{number: string | number; content: string}> = ({ number, content }) => (
   <li className={`page-item${number < 0 ? ' disabled' : ''}`}>
-    <Link className="page-link" to={`${number}`} href={number}>
+    <Link className="page-link" to={`${number}`}>
       {content || number}
     </Link>
   </li>
 );
 
-const getPageNumber = pathname => pathname.split('/')[2];
+const getPageNumber = (pathname: string) => pathname.split('/')[2];
 
-const Pagination = ({ pathname, pageCount }) => {
+const Pagination: React.FC<{pathname: string; pageCount: number}> = ({ pathname, pageCount }) => {
   const currentPageNumber = getPageNumber(pathname);
   return (
     <nav aria-label="Page navigation example">
@@ -36,16 +35,6 @@ const Pagination = ({ pathname, pageCount }) => {
       </ul>
     </nav>
   );
-};
-
-PageItem.propTypes = {
-  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  content: PropTypes.string.isRequired,
-};
-
-Pagination.propTypes = {
-  pathname: PropTypes.string.isRequired,
-  pageCount: PropTypes.number.isRequired,
 };
 
 export default Pagination;

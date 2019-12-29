@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import lozad from 'lozad';
 
 import { isBrowser } from '../../api';
 
-class Content extends Component {
-  constructor(props) {
+interface IProps {
+  post: string;
+}
+
+class Content extends Component<IProps> {
+  private post: string;
+
+  constructor(props: Readonly<IProps>) {
     super(props);
     const { post } = this.props;
     this.post = post;
@@ -17,10 +22,8 @@ class Content extends Component {
     if (isBrowser()) {
       // Initialize library
       const observer = lozad('.lozad', {
-        load(el) {
-          /* eslint-disable no-param-reassign */
-
-          el.src = el.dataset.src;
+        load(el: HTMLImageElement) {
+          el.src = el.dataset.src || '';
           el.onload = () => {
             el.classList.add('animated');
             el.classList.add('fadeIn');
@@ -36,7 +39,6 @@ class Content extends Component {
     const { post } = this.props;
     return (
       <div
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: post }}
         style={{
           padding: 30,
@@ -46,9 +48,5 @@ class Content extends Component {
     );
   }
 }
-
-Content.propTypes = {
-  post: PropTypes.string.isRequired,
-};
 
 export default Content;

@@ -1,15 +1,11 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-import {
-  TransitionGroup,
-  Transition as ReactTransition,
-} from 'react-transition-group';
+import { Transition as ReactTransition, TransitionGroup, } from 'react-transition-group';
 
 import { config } from '../../../data';
 // This variable will be responsible for our animation duration
 const { transitionDelay = 100 } = config;
 
-const getTransitionStyles = {
+const getTransitionStyles: {[key: string]: React.CSSProperties} = {
   entering: {
     position: 'absolute',
     opacity: 0,
@@ -24,7 +20,11 @@ const getTransitionStyles = {
   },
 };
 
-class Transition extends React.PureComponent {
+interface IProps {
+  location: Location
+}
+
+class Transition extends React.PureComponent<IProps> {
   render() {
     // Destructuring props to avoid garbage this.props... in return statement
     const { children, location } = this.props;
@@ -40,9 +40,10 @@ class Transition extends React.PureComponent {
           }
         >
           {// Styles depends on the status of page(entering, exiting, entered) in the DOM
-          status => (
-            <div style={{ ...getTransitionStyles[status] }}>{children}</div>
-          )}
+          (status) => {
+            const currentStyle = getTransitionStyles[status];
+            return <div style={currentStyle}>{children}</div>
+          }}
         </ReactTransition>
       </TransitionGroup>
     );

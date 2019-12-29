@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Dropdown = ({ title, list }) => (
+const Dropdown: React.FC<{title: string, list: any[]}> = ({ title, list }) => (
   <li className="nav-item dropdown">
     <button
       type="button"
@@ -23,9 +22,5 @@ const Dropdown = ({ title, list }) => (
     </div>
   </li>
 );
-
-Dropdown.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 export default Dropdown;

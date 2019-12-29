@@ -13,20 +13,15 @@ if (typeof window !== 'undefined') {
   require('smooth-scroll')('a', { offset: 60 });
 }
 
-const Layout = ({ children, location }) => (
-  <div className="layout">
-    <Head />
-    <Navbar location={location} />
-    <Transition location={location}>
-      <div className="container-fluid">{children}</div>
-    </Transition>
-    <Footer />
-  </div>
+const Layout: React.FC = ({ children }) => (
+    <div className="layout">
+        <Head/>
+        <Navbar/>
+        <Transition location={location}>
+            <div className="container-fluid">{children}</div>
+        </Transition>
+        <Footer/>
+    </div>
 );
-
-// Layout.propTypes = {
-//   children: PropTypes.object.isRequired,
-//   location: PropTypes.any
-// };
 
 export default Layout;

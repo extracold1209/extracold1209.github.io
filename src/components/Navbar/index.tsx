@@ -50,7 +50,7 @@ const Navbar = () => (
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav mr-2">
-          {navbarList.map(item => (
+          {navbarList.map((item: any) => (
             <NavItem
               url={item.href}
               name={item.title}
