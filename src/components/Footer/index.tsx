@@ -28,9 +28,8 @@ const Footer = () => (
           <p className="copyright">
             Copyright&nbsp;
             <ExternalLink href="https://calpa.me/" title="&copy;Calpa" />
-            &nbsp;
-            {config.title}
-            {new Date().getFullYear()}
+            &nbsp;{new Date().getFullYear()}
+            &nbsp;{config.title}
             &nbsp;Theme by Calpa Liu
           </p>
         </div>

@@ -78,7 +78,7 @@ module.exports = ({ actions, graphql }) => {
       createPage({
         path: $path,
         tags,
-        component: path.resolve(`src/templates/${String(component)}.js`),
+        component: path.resolve(`src/templates/${String(component)}.tsx`),
         // additional data can be passed via context
         context: {
           id,
@@ -91,7 +91,7 @@ module.exports = ({ actions, graphql }) => {
     return tagSet.forEach((tag) => {
       createPage({
         path: `/tag/${tag}`,
-        component: path.resolve('src/templates/tag.js'),
+        component: path.resolve('src/templates/tag.tsx'),
         context: {
           tag,
         },

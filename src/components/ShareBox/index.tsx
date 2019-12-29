@@ -7,7 +7,7 @@ import './index.scss';
 
 interface IProps {
     url: string;
-    hasCommentBox: boolean;
+    hasCommentBox?: boolean;
 }
 
 const CommentButton: React.FC = () => (
