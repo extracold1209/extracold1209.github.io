@@ -25,6 +25,8 @@ const CardHeader: React.FC<{url: string, image: string; backgroundColor: string}
   </Link>
 );
 
+// @ts-ignore
+// @ts-ignore
 const Card: React.FC<IProps> = ({
   title,
   date,

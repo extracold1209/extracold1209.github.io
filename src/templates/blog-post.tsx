@@ -1,6 +1,6 @@
 // Components
-import React, { useEffect } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
 
 import 'gitalk/dist/gitalk.css';
 
@@ -23,7 +23,68 @@ const { name, iconUrl, gitalk } = config;
 const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
 
-const blogPostQuery = graphql`
+class BlogPost extends Component<any> {
+    private data: any;
+
+    constructor(props: Readonly<any>) {
+        super(props);
+        this.data = this.props.data;
+    }
+
+    componentDidMount() {
+        const { frontmatter, id: graphqlId } = this.data.content.edges[0].node;
+        const { title, id } = frontmatter;
+
+        const GitTalkInstance = new Gitalk({
+            ...gitalk,
+            title,
+            id: id || graphqlId,
+        });
+        GitTalkInstance.render('gitalk-container');
+    }
+
+    render() {
+        const { node } = this.data.content.edges[0];
+
+        const {
+            html, frontmatter, fields, excerpt,
+        } = node;
+
+        const { slug } = fields;
+
+        const { date, headerImage, title } = frontmatter;
+
+        return (
+            <div className="row post order-2">
+                <Header
+                    img={headerImage || 'https://picsum.photos/1900/450'}
+                    title={title}
+                    authorName={name}
+                    authorImage={iconUrl}
+                    subTitle={parseDate(date)}
+                />
+                <Sidebar />
+                <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
+                    <Content post={html} />
+                    <div id="gitalk-container" />
+                </div>
+
+                <ShareBox url={slug} />
+
+                <SEO
+                    title={title}
+                    url={slug}
+                    siteTitleAlt="Calpa's Blog"
+                    isPost={false}
+                    description={excerpt}
+                    image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
+                />
+            </div>
+        );
+    }
+}
+
+export const pageQuery = graphql`
   fragment post on MarkdownRemark {
     fields {
       slug
@@ -62,50 +123,5 @@ const blogPostQuery = graphql`
     }
   }
 `;
-
-const BlogPost: React.FC = () => {
-    const {content} = useStaticQuery(blogPostQuery);
-    const firstNode = content.edges[0].node;
-    const {html, frontmatter, fields, excerpt, id: graphqlId} = firstNode;
-    const {slug} = fields;
-    const {date, headerImage,title, id} = frontmatter;
-
-    useEffect(() => {
-        const GitTalkInstance = new Gitalk({
-            ...gitalk,
-            title,
-            id: id || graphqlId,
-        });
-        GitTalkInstance.render('gitalk-container');
-    }, []);
-
-    return (
-        <div className="row post order-2">
-            <Header
-                img={headerImage || 'https://picsum.photos/1900/450'}
-                title={title}
-                authorName={name}
-                authorImage={iconUrl}
-                subTitle={parseDate(date)}
-            />
-            <Sidebar />
-            <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
-                <Content post={html} />
-                <div id="gitalk-container" />
-            </div>
-
-            <ShareBox url={slug as string} />
-
-            <SEO
-                title={title}
-                url={slug}
-                siteTitleAlt="Calpa's Blog"
-                isPost={false}
-                description={excerpt}
-                image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
-            />
-        </div>
-    );
-};
 
 export default BlogPost;

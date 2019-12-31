@@ -50,13 +50,13 @@ const parsePageUrl = (index: number) => {
     return -1;
 };
 
-const handlePreviousPage = (pageNumber: number) => {
+const handlePreviousPage = (pageNumber: string) => {
     const index = minusOnePage(+pageNumber);
 
     return parsePageUrl(index);
 };
 
-const handleNextPage = (pageNumber: number, maxPages: number) => {
+const handleNextPage = (pageNumber: string, maxPages: number) => {
     const index = addOnePage(+pageNumber, maxPages);
 
     return parsePageUrl(index);
