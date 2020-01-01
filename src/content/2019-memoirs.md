@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: 5a4c3340-29ee-11ea-822f-23a9dd20b0fb
 title: 되도않는 2019년 회고록 나도한번 조져본다
-slug: /2019/11/29/2019-memoirs
+slug: /2019/12/29/2019-memoirs
 description: ''
 tags:
   - memoirs

@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: fa1f5110-2bdb-11ea-93f4-1b7c262eedc0
 title: github 블로그에 gitalk 로 코멘트 기능 적용하기
-slug: /2019/11/31/use-gittalk
+slug: /2019/12/31/use-gittalk
 description: ''
 tags:
   - blog

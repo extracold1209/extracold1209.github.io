@@ -15,7 +15,7 @@ fs.writeFileSync(targetPath, `---
 templateKey: blog-post
 id: ${uuid()}
 title: ${postName}
-slug: /${now.year()}/${now.month()}/${now.date()}/${postFileName || postName}
+slug: /${now.year()}/${now.month() + 1}/${now.date()}/${postFileName || postName}
 description: ''
 tags:
   - uncategorized
