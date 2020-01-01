@@ -37,6 +37,8 @@ date: 2020-01-01T03:39:06.874Z
 
 이런 글도 참고해볼 수 있겠다. [What is Prototype Pollution?](https://codeburst.io/what-is-prototype-pollution-49482fc4b638)
 
+> 주: 이게 폴리필이라는 것은 아니다. 말하고자 하는 것은 기존에 작성된 코드를 런타임에 변형할 수 있다는 것이다. 이는 몽키패치라고 한다.
+
 ---
 
 ## 그래서 폴리필이란?
