@@ -10,7 +10,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-webpack-bundle-analyzer',
     'gatsby-plugin-lodash',
     {
       resolve: 'gatsby-plugin-typescript',
@@ -32,9 +31,16 @@ module.exports = {
         plugins: [
           'gatsby-remark-autolink-headers',
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: 'gatsby-remark-embed-gist',
             options: {
-              showLineNumbers: true,
+              // Optional:
+
+              // the github handler whose gists are to be accessed
+              username: 'extracold1209',
+
+              // a flag indicating whether the github default gist css should be included or not
+              // default: true
+              includeDefaultCss: true,
             },
           },
           {
@@ -64,7 +70,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Calpa's Blog",
+        name: 'Calpa\'s Blog',
         short_name: 'Calpa',
         start_url: '/',
         background_color: '#ededed',
