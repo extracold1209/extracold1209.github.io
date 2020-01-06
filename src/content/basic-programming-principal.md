@@ -36,7 +36,7 @@ date: 2020-01-06T11:41:52.549Z
 
 > 참고  
 > https://medium.com/@derodu/design-patterns-kiss-dry-tda-yagni-soc-828c112b89ee  
-> https://www.makeuseof.com/tag/basic-programming-principles/
+> https://www.makeuseof.com/tag/basic-programming-principles/  
 > https://engineering.linecorp.com/ko/blog/code-readability-vol1/
 
 ---
