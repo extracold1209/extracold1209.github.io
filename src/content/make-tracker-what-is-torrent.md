@@ -7,7 +7,7 @@ description: '비트토렌트 트래커 만들기 1화'
 tags:
   - uncategorized
   - javascript
-headerImage: '/images/bittorrent.jpg'
+headerImage: '/images/bittorrent.png'
 date: 2020-02-11T01:01:42.795Z
 ---
 
