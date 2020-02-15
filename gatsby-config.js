@@ -10,6 +10,20 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_self",
+              rel: "nofollow"
+            }
+          }
+        ]
+      }
+    },
     'gatsby-plugin-lodash',
     {
       resolve: 'gatsby-plugin-typescript',
