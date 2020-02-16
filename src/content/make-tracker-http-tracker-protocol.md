@@ -67,9 +67,11 @@ encode 된 버퍼를 문자열로 변환하면 아래와 같다.
 비트토렌트의 기본 프로토콜은 http 통신 프로토콜 기반이다. ws, udp, tcp 가 더 있고, 주로 udp 가 사용된다고 알고있다.  
 (통신상 부담이 적기때문)
 
-일단 나의 목표는 http 프로토콜 기반 트래커는 개발하는 것이기 때문에, http 프로토콜 위에서 어떤 인자로 주고받아야 하는지 보도록 하겠다.
+일단 나의 목표는 http 프로토콜 기반 트래커 개발하는 것이기 때문에, http 프로토콜 위에서 어떤 인자로 주고받아야 하는지 보도록 하겠다.
 
 [Tracker Protocol](https://wiki.theory.org/index.php/BitTorrent_Tracker_Protocol) 에 따라 이 req, res 를 인터페이스로 작성해보면 다음과 같다.
+
+### Request
 
 ```typescript
 enum PeerEvent {
@@ -98,9 +100,50 @@ type TrackerRequestParams = {
 }
 ```
 
-파라미터에 대한 설명은 아래와 같다. (당연한건 넘어갔음)
+파라미터에 대한 설명은 아래와 같다.
 
 - info_hash: 토렌트 파일 고유의 해시. 이 해시와 동일한 요청들끼리 묶어서 피어간 통신을 진행한다.
 - peer_id: 피어 고유의 값. info_hash 와 peer_id 는 urlencoded 20byte string 이어야 한다.
 - uploaded, downloaded, left: 이 피어가 해당 해시에서 업로드한 바이트수, 다운로드한 바이트수, 다운로드 완료까지 남은 바이트수이다.
   특히 left 는 좀 중요한데, left가 0이라는 것은 완전한 파일을 가지고있는 피어라는 뜻이기 때문에, 이를 '시더' 라고 부르기 때문이다. (반대는 '리처' 라고 부른다)
+- event: 이 요청이 어떤 동작을 위해 요청된 신호인지 판단하는 값이다. 값의 의미는 아래와 같다. 값이 없는경우 stopped 와 동일하게 취급한다.
+  - started: 공유를 위한 첫 요청이다. 프로그램이 새로 실행되었거나, 토렌트가 신규 추가되었거나 하는 등의 요청
+  - stopped: 공유를 정지했을때 트래커에 보내는 신호이다. graceful stop 신호로 트래커는 이 신호를 받으면 피어 풀에서 해당 피어를 정리한다.
+  - completed: 파일을 완성한 경우 피어가 보내는 신호. 이미 100% 다운로드인 상태에서 시작된 경우 이 신호를 다시 보내지는 않는다.
+
+### Response
+
+```typescript
+type PeerDictionary = {
+    'peer id': string, // 혹은 id. request 에 인자로 no_peer_id 가 있는 경우 제공하지 않아도 된다.
+    ip: string,
+    port: number,
+}
+
+type TrackerResponseParams = {
+    'warning message'?: string; // 경고문이 발생은 하나 연결 동작은 그대로 진행
+    interval: number; // 트래커에 피어목록 재요청을 하기까지의 interval
+    'min interval'?: number;
+    'tracker id': string;
+    complete: number; // 시더의 수
+    incomplete: number; // 리처의 수
+    peers: PeerDictionary[]; // 피어목록. buffer 타입 / dict 타입이 있으나 여기선 dict 타입만 언급
+}
+
+type TrackerFailResponseParams = {
+    'failure reason': string; // 에러가 발생한 경우 발생 원인을 표기할 수 있는 프로퍼티
+}
+```
+
+요청결과값은 위의 포맷을 기본사항으로 bencode 된 결과값을 전송하면 된다.
+
+저 결과를 받은 토렌트 프로그램은 피어목록을 확인하고, 각 피어들끼리 토렌트 파일 조각을 요청하여 서로 공유를 시작할 것이다.
+
+### 결론
+
+결론적으로 트래커는 event: started 인 요청을 받으면 해당 요청을 보낸 피어의 ip, port, info_hash 및 left 등과 같은 값을 가지고 상태를 판단해,  
+info_hash 로 묶인 피어목록 (swarm 이라고 한다) 을 관리하는 주체라고 볼 수 있을 것이다.
+
+여러 요청들을 통해 피어목록에 피어를 추가하고, response 에 그 목록을 담아 전달하고, 시더가 될 수 있는 피어들을 구분해내는 역할말이다.
+
+다음번에는 이 타입을 기준으로 nodejs + express + typescript 위에서 기본적인 트래커를 만들어 볼 예정이다.
