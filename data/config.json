@@ -34,7 +34,7 @@
   ],
   "iconUrl": "/assets/profile-250x250.jpg",
   "wordings": ["아 블로그만들기 개어려워", "나는 빡빡이다"],
-  "gaTrackId": "UA-84737574-3",
+  "gaTrackId": "UA-159312530-1",
   "navbarList": [
     {
       "href": "/guestbook/",
@@ -55,7 +55,7 @@
       "fromPath": "/about/"
     }
   ],
-  "gaOptimizeId": "GTM-WHP7SC5",
+  "gaOptimizeId": "GTM-KVZLP9F",
   "carouselItems": [
     {
       "src": "https://i.imgur.com/gw91CuI.jpg",
