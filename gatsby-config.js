@@ -84,22 +84,22 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Calpa\'s Blog',
-        short_name: 'Calpa',
+        name: 'Extracold\'s Blog',
+        short_name: 'Blog',
         start_url: '/',
         background_color: '#ededed',
         theme_color: '#384f7c',
         display: 'standalone',
         icons: [
           {
-            src: '/favicons/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: '/assets/profile-250x250.jpg',
+            sizes: '250x250',
+            type: 'image/jpg',
           },
           {
-            src: '/favicons/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: '/assets/profile-416x416.jpg',
+            sizes: '416x416',
+            type: 'image/jpg',
           },
         ],
       },
